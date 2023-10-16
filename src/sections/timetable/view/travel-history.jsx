@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Card from '@mui/material/Card';
 import Stack from '@mui/material/Stack';
 import Table from '@mui/material/Table';
+// import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import TableBody from '@mui/material/TableBody';
 import Typography from '@mui/material/Typography';
@@ -11,6 +12,7 @@ import TablePagination from '@mui/material/TablePagination';
 
 import { users } from 'src/_mock/user';
 
+// import Iconify from 'src/components/iconify';
 import Scrollbar from 'src/components/scrollbar';
 
 import TableNoData from '../table-no-data';
@@ -22,7 +24,7 @@ import { emptyRows, applyFilter, getComparator } from '../utils';
 
 // ----------------------------------------------------------------------
 
-export default function TimetablePage() {
+export default function HistoryPage() {
   const [page, setPage] = useState(0);
 
   const [order, setOrder] = useState('asc');
@@ -97,7 +99,7 @@ export default function TimetablePage() {
 
       <Card>
         <Stack direction="row" alignItems="center" justifyContent="space-between" m={2}>
-          <Typography variant="h4">Time Table</Typography>
+            <Typography variant="h4">Travel History</Typography>
         </Stack>
         <UserTableToolbar
           numSelected={selected.length}
@@ -116,12 +118,14 @@ export default function TimetablePage() {
                 onRequestSort={handleSort}
                 onSelectAllClick={handleSelectAllClick}
                 headLabel={[
-                  { id: 'name', label: 'Date' },
-                  { id: 'company', label: 'Day' },
+                  { id: 'name', label: 'ID' },
+                  { id: 'company', label: 'Date' },
                   { id: 'role', label: 'Bus No.' },
                   { id: 'status', label: 'Start - Arrive Location' },
                   { id: 'status', label: 'Start - Arrive Time' },
                   { id: 'status', label: 'Driver' },
+                  { id: 'status', label: 'Seats' },
+                  { id: 'status', label: 'Total No. Passengers' },
                   { id: '' },
                 ]}
               />

@@ -1,17 +1,17 @@
 import { Helmet } from 'react-helmet-async';
 
-import { TimetableView } from 'src/sections/timetable/view';
+import AssignBusView from 'src/sections/timetable/view/assign-bus';
 
 // ----------------------------------------------------------------------
 
-export default function TimetablePage() {
+export default function AssignBusPage() {
   return (
     <>
       <Helmet>
-        <title>Timetable</title>
+        <title>Assign Bus</title>
       </Helmet>
 
-      <TimetableView />
+      <AssignBusView />
     </>
   );
 }
