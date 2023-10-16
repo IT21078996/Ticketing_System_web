@@ -1,17 +1,17 @@
 import { Helmet } from 'react-helmet-async';
 
-import { TimetableView } from 'src/sections/timetable/view';
+import HistoryView from 'src/sections/timetable/view/travel-history';
 
 // ----------------------------------------------------------------------
 
-export default function TimetablePage() {
+export default function HistoryPage() {
   return (
     <>
       <Helmet>
-        <title>Timetable</title>
+        <title> User | Minimal UI </title>
       </Helmet>
 
-      <TimetableView />
+      <HistoryView />
     </>
   );
 }

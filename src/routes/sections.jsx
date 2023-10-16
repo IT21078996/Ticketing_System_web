@@ -11,6 +11,8 @@ export const ProductsPage = lazy(() => import('src/pages/products'));
 export const Page404 = lazy(() => import('src/pages/page-not-found'));
 export const AdminIndexPage = lazy(() => import('src/pages/admin-app'));
 export const TimetablePage = lazy(() => import('src/pages/timetable'));
+export const AssignBusPage = lazy(() => import('src/pages/assign-bus'));
+export const HistoryPage = lazy(() => import('src/pages/travel-history'));
 
 // ----------------------------------------------------------------------
 
@@ -31,6 +33,8 @@ export default function Router() {
         { path: 'blog', element: <BlogPage /> },
         { path: 'admin', element: <AdminIndexPage /> },
         { path: 'timetable', element: <TimetablePage /> },
+        { path: 'assign-bus', element: <AssignBusPage /> },
+        { path: 'history', element: <HistoryPage /> },
       ],
     },
     {

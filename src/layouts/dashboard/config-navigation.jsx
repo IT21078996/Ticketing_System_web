@@ -58,7 +58,7 @@ const navConfig = [
     icon: icon('ic_timetable'),
   },
   {
-    title: 'assign busses',
+    title: 'assign buses',
     path: '/assign-bus',
     icon: icon('ic_ride'),
   },
