@@ -22,6 +22,7 @@ export default function AppRequirements({ requirement, description, sx, ...other
         <Typography variant="h6">Requirements</Typography>
         <br />
         <Typography variant="subtitle1">{requirement}</Typography>
+        <br />
         <Typography variant="subtitle2">{description}</Typography>
       </Stack>
     </Card>

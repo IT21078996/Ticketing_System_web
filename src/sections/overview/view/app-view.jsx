@@ -2,7 +2,7 @@
 
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Unstable_Grid2';
-import Typography from '@mui/material/Typography';
+// import Typography from '@mui/material/Typography';
 
 // import Iconify from 'src/components/iconify';
 
@@ -24,9 +24,6 @@ import AppWidgetSummary from '../app-widget-summary';
 export default function AppView() {
   return (
     <Container maxWidth="xl">
-      <Typography variant="h4" sx={{ mb: 5 }}>
-        Welcome to BusHub! 👋
-      </Typography>
 
       <Grid container spacing={3}>
         
@@ -63,6 +60,10 @@ export default function AppView() {
               {
                 question: "Can we get student passes more than once?",
                 answer: "Yes, If you have children you can buy student pass for each.",
+              },
+              {
+                question: ".",
+                answer: ".",
               },
               {
                 question: "What is the duration of validity for my student pass?",

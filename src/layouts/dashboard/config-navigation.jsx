@@ -42,6 +42,36 @@ const navConfig = [
     path: '/404',
     icon: icon('ic_settings'),
   },
+  {
+    title: 'admin dashboard',
+    path: '/admin',
+    icon: icon('ic_analytics'),
+  },
+  {
+    title: 'Travel History',
+    path: '/history',
+    icon: icon('ic_travel_history'),
+  },
+  {
+    title: 'bus timetables',
+    path: '/timetable',
+    icon: icon('ic_timetable'),
+  },
+  {
+    title: 'assign busses',
+    path: '/assign-bus',
+    icon: icon('ic_ride'),
+  },
+  {
+    title: 'fare rates',
+    path: '/fare-rates',
+    icon: icon('ic_payouts'),
+  },
+  {
+    title: 'reports',
+    path: '/reports',
+    icon: icon('ic_analytics'),
+  },
   // {
   //   title: 'user',
   //   path: '/user',

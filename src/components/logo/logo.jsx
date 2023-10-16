@@ -3,6 +3,7 @@ import { forwardRef } from 'react';
 
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
+import { Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 
 import { RouterLink } from 'src/routes/components';
@@ -35,7 +36,8 @@ const Logo = forwardRef(({ disabledLink = false, sx, ...other }, ref) => {
       sx={{
         width: 40,
         height: 40,
-        display: 'inline-flex',
+        display: 'flex',
+        alignItems: 'center',
         ...sx,
       }}
       {...other}
@@ -73,6 +75,7 @@ const Logo = forwardRef(({ disabledLink = false, sx, ...other }, ref) => {
           />
         </g>
       </svg>
+      <Typography variant="h3" sx={{ marginLeft: 1 }}>BUSHUB</Typography>
     </Box>
   );
 

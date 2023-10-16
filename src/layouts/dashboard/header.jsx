@@ -6,6 +6,7 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import { useTheme } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
 
 import { useResponsive } from 'src/hooks/use-responsive';
 
@@ -13,17 +14,13 @@ import { bgBlur } from 'src/theme/css';
 
 import Iconify from 'src/components/iconify';
 
-import Searchbar from './common/searchbar';
 import { NAV, HEADER } from './config-layout';
 import AccountPopover from './common/account-popover';
 import LanguagePopover from './common/language-popover';
 import NotificationsPopover from './common/notifications-popover';
 
-// ----------------------------------------------------------------------
-
 export default function Header({ onOpenNav }) {
   const theme = useTheme();
-
   const lgUp = useResponsive('up', 'lg');
 
   const renderContent = (
@@ -34,7 +31,11 @@ export default function Header({ onOpenNav }) {
         </IconButton>
       )}
 
-      <Searchbar />
+      <Box>
+        {/* <Typography variant="subtitle2" sx={{ color: 'text.primary' }}>Hi, Kasun</Typography> */}
+        <Typography variant="h4" sx={{ color: 'text.primary' }}>Welcome to BusHub!</Typography>
+        <Typography variant="subtitle1" sx={{ color: 'text.primary' }}>Local Passenger</Typography>
+      </Box>
 
       <Box sx={{ flexGrow: 1 }} />
 

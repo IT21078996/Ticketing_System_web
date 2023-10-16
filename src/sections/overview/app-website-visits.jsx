@@ -6,10 +6,11 @@ import CardHeader from '@mui/material/CardHeader';
 
 import Chart, { useChart } from 'src/components/chart';
 
-// ----------------------------------------------------------------------
-
-export default function AppWebsiteVisits({ title, subheader, chart, ...other }) {
+export default function AppDailyEarnings({ chart, ...other }) {
   const { labels, colors, series, options } = chart;
+
+  // Calculate the total earnings for the month
+  const totalEarnings = series[0].data.reduce((acc, value) => acc + value, 0);
 
   const chartOptions = useChart({
     colors,
@@ -23,7 +24,7 @@ export default function AppWebsiteVisits({ title, subheader, chart, ...other }) 
     },
     labels,
     xaxis: {
-      type: 'datetime',
+      type: 'category', // Use 'category' for days of the month
     },
     tooltip: {
       shared: true,
@@ -31,7 +32,7 @@ export default function AppWebsiteVisits({ title, subheader, chart, ...other }) 
       y: {
         formatter: (value) => {
           if (typeof value !== 'undefined') {
-            return `${value.toFixed(0)} visits`;
+            return `Lkr. ${value.toFixed(2)}`; // Format earnings
           }
           return value;
         },
@@ -42,7 +43,10 @@ export default function AppWebsiteVisits({ title, subheader, chart, ...other }) 
 
   return (
     <Card {...other}>
-      <CardHeader title={title} subheader={subheader} />
+      <CardHeader
+        subheader="This month earnings"
+        title={`Lkr. ${totalEarnings.toFixed(2)}`} // Display total earnings in the title
+      />
 
       <Box sx={{ p: 3, pb: 1 }}>
         <Chart
@@ -58,8 +62,6 @@ export default function AppWebsiteVisits({ title, subheader, chart, ...other }) 
   );
 }
 
-AppWebsiteVisits.propTypes = {
+AppDailyEarnings.propTypes = {
   chart: PropTypes.object,
-  subheader: PropTypes.string,
-  title: PropTypes.string,
 };
