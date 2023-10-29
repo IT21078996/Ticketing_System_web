@@ -15,6 +15,7 @@ export default function AssignBusView() {
         arrivalLocation: '',
         startTime: '',
         arrivalTime: '',
+        driver: '',
     });
 
     const handleFormSubmit = async (e) => {
@@ -33,6 +34,7 @@ export default function AssignBusView() {
             arrivalLocation: '',
             startTime: '',
             arrivalTime: '',
+            driver: '',
           });
         } catch (error) {
           console.error("Error adding document: ", error);
@@ -67,6 +69,7 @@ export default function AssignBusView() {
                                 <TextField name='arrivalLocation' label='Arrival Location' value={formData.arrivalLocation} onChange={handleInputChange} />
                                 <TextField name='startTime' label='Start Time' value={formData.startTime} onChange={handleInputChange} />
                                 <TextField name='arrivalTime' label='Arrival Time' value={formData.arrivalTime} onChange={handleInputChange} />
+                                <TextField name='driver' label='Driver' value={formData.driver} onChange={handleInputChange} />
                             </Box>
 
                             <Stack flexDirection='row' justifyContent='center' sx={{ mt: 3 }}>
