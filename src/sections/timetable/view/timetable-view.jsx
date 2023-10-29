@@ -15,7 +15,7 @@ import TablePagination from '@mui/material/TablePagination';
 import Scrollbar from 'src/components/scrollbar';
 
 import TableNoData from '../table-no-data';
-import UserTableRow from '../user-table-row';
+import UserTableRow from '../bus-table-row';
 import { firestore } from '../../../firebase';
 import UserTableHead from '../user-table-head';
 import TableEmptyRows from '../table-empty-rows';
@@ -145,7 +145,7 @@ export default function TimetablePage() {
                   { id: 'arrivalLocation', label: 'Arrive Location' },
                   { id: 'startTime', label: 'Start Time' },
                   { id: 'arrivalTime', label: 'Arrive Time' },
-                  // { id: 'status', label: 'Driver' },
+                  { id: 'driver', label: 'Driver' },
                   { id: '' },
                 ]}
               />
@@ -161,6 +161,7 @@ export default function TimetablePage() {
                       company={row.arrivalLocation}
                       avatarUrl={row.startTime}
                       isVerified={row.arrivalTime}
+                      driver={row.driver}
                       selected={selected.indexOf(row.name) !== -1}
                       handleClick={(event) => handleClick(event, row.name)}
                     />

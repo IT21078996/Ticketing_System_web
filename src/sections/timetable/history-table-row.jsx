@@ -16,15 +16,16 @@ import Iconify from 'src/components/iconify';
 
 // ----------------------------------------------------------------------
 
-export default function UserTableRow({
+export default function HistoryTableRow({
   selected,
-  name,
-  avatarUrl,
-  company,
-  role,
-  isVerified,
-  status,
+  date,
+  busno,
+  start,
+  end,
   handleClick,
+  driver,
+  seats,
+  passengers,
 }) {
   const [open, setOpen] = useState(null);
 
@@ -43,17 +44,19 @@ export default function UserTableRow({
           <Checkbox disableRipple checked={selected} onChange={handleClick} />
         </TableCell>
 
-        <TableCell>{name}</TableCell>
+        <TableCell>{date}</TableCell>
 
-        <TableCell>{role}</TableCell>
+        <TableCell>{busno}</TableCell>
 
-        <TableCell>{status}</TableCell>
+        <TableCell>{start}</TableCell>
 
-        <TableCell>{company}</TableCell>
+        <TableCell>{end}</TableCell>
 
-        <TableCell>{avatarUrl}</TableCell>
+        <TableCell>{driver}</TableCell>
 
-        <TableCell>{isVerified}</TableCell>
+        <TableCell>{seats}</TableCell>
+
+        <TableCell>{passengers}</TableCell>
 
         <TableCell align="right">
           <IconButton onClick={handleOpenMenu}>
@@ -86,13 +89,14 @@ export default function UserTableRow({
   );
 }
 
-UserTableRow.propTypes = {
-  avatarUrl: PropTypes.any,
-  company: PropTypes.any,
-  handleClick: PropTypes.func,
-  isVerified: PropTypes.any,
-  name: PropTypes.any,
-  role: PropTypes.any,
+HistoryTableRow.propTypes = {
+  date: PropTypes.any,
+  busno: PropTypes.any,
+  start: PropTypes.func,
+  end: PropTypes.any,
+  driver: PropTypes.any,
+  seats: PropTypes.any,
+  passengers: PropTypes.any,
   selected: PropTypes.any,
-  status: PropTypes.string,
+  handleClick: PropTypes.func,
 };
